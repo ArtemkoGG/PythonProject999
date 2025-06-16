@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Асортимент - {{ name_restaurant }}{% endblock title %}
+
+{% block content %}
+<h2 class="mb-4 text-center">Наш Асортимент</h2>
+
+<p class="lead text-center mb-4">
+    Ознайомтесь із широким вибором свіжих та якісних продуктів, які ми підготували спеціально для вас.
+</p>
+
+<div class="text-center mb-5">
+    <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">На головну</a>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://bohlib.com.ua/wp-content/uploads/2024/08/pro-khlib-yakist-tradytsii-ta-maysternist-u-kozhnomu-shmatochku.jpg" class="card-img-top" alt="Хліб">
+      <div class="card-body">
+        <h5 class="card-title">Свіжий Хліб</h5>
+        <p class="card-text">Ароматний домашній хліб з натуральних інгредієнтів.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Ціна: 25 грн</small>
+         <a href="{{ url_for('product_detail', product_id=1) }}" class="btn btn-sm btn-outline-primary">Детальніше</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://bmk.net.ua/wp-content/uploads/2023/03/%D0%9A%D0%BE%D0%B2%D0%B1%D0%B0%D1%81%D0%B0-%D1%81%D0%B0%D0%BB%D1%8F%D0%BC%D1%96-%D1%81%D0%B8%D1%80%D0%BE%D0%BA%D0%BE%D0%BF%D1%87%D0%B5%D0%BD%D0%B0-%D0%BF%D0%B5%D1%80%D1%88%D0%BE%D0%B3%D0%BE-%D1%81%D0%BE%D1%80%D1%82%D1%83-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B0.jpg" class="card-img-top" alt="Ковбаса">
+      <div class="card-body">
+        <h5 class="card-title">Ковбаса</h5>
+        <p class="card-text">Свіжа ковбаса з натуральних інгредієнтів, збережена за оптимальних умов для максимальної якості.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Ціна: 100 грн</small>
+         <a href="{{ url_for('product_detail', product_id=2) }}" class="btn btn-sm btn-outline-primary">Детальніше</a>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="col">
+    <div class="card h-100">
+      <img src="https://st3.depositphotos.com/1642482/19429/i/450/depositphotos_194294298-stock-photo-cucumber-and-slices.jpg" class="card-img-top" alt="Хліб">
+      <div class="card-body">
+        <h5 class="card-title">Огірки</h5>
+        <p class="card-text">Огірки мають свіжий зелений колір, соковиту м’якоть і хрустку текстуру</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Ціна: 30 грн за кг</small>
+         <a href="{{ url_for('product_detail', product_id=3) }}" class="btn btn-sm btn-outline-primary">Детальніше</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock content %}
