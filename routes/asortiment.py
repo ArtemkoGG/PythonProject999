@@ -1,10 +1,15 @@
 from flask import render_template
 from app import app
-from models import Product
+from models import Asortiment
 from settings import Session
 
-@app.route('/asortiment')
+
+@app.route("/asortiment")
 def asortiment():
     with Session() as session:
-        products = session.query(Product).all()
-    return render_template('asortiment.html', products=products, name_restaurant="Смачно Онлайн")
+        asortiment_list = session.query(Asortiment).all()
+    return render_template(
+        "asortiment.html",
+        asortiment_list=asortiment_list,
+        name_restaurant="Смачно Онлайн",
+    )

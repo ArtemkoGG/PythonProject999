@@ -24,7 +24,10 @@ class DatabaseConfig:
     NAME_RESTAURNAT = "Смачно Онлайн"
 
     def uri_postgres(self):
-        return f"postgresql+psycopg2://{self.DB_USER}:{self.DB_PASSWORD}@localhost:5432/{self.DATABASE_NAME}"
+        return f"postgresql+psycopg2://{
+            self.DB_USER}:{
+            self.DB_PASSWORD}@localhost:5432/{
+            self.DATABASE_NAME}"
 
     def uri_sqlite(self):
         return f"sqlite:///{self.DATABASE_NAME}.db"
@@ -38,8 +41,10 @@ Session = sessionmaker(bind=engine)
 
 
 class Base(DeclarativeBase):
-    def create_db(self):
-        self.metadata.create_all(engine)
+    @classmethod
+    def create_db(cls):
+        cls.metadata.create_all(engine)
 
-    def drop_db(self):
-        self.metadata.drop_all(engine)
+    @classmethod
+    def drop_db(cls):
+        cls.metadata.drop_all(engine)

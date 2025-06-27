@@ -1,16 +1,10 @@
-from flask import Flask, flash, redirect, render_template, request, url_for
-from flask_login import LoginManager, login_required, login_user, logout_user
+from flask import flash, redirect, render_template, request, url_for
+from flask_login import login_required, login_user, logout_user
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from app import app
 from models import User
-from settings import  Session, config
-
-
-@app.route("/profile")
-@login_required
-def profile():
-    return render_template("profile.html", name_restaurant=config.NAME_RESTAURNAT)
+from settings import Session, config
 
 
 @app.route("/register", methods=["GET", "POST"])
